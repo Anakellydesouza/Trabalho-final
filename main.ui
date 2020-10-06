@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1004</width>
+    <height>642</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Principal</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="minimumSize">
+    <size>
+     <width>155</width>
+     <height>312</height>
+    </size>
+   </property>
+   <widget class="QDockWidget" name="dockWidget_9">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>500</width>
+      <height>354</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>500</width>
+      <height>111</height>
+     </size>
+    </property>
+    <property name="windowTitle">
+     <string>Visualização</string>
+    </property>
+    <widget class="QWidget" name="dockWidgetContents_9">
+     <layout class="QHBoxLayout" name="horizontalLayout_2"/>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1004</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="toolTipDuration">
+    <number>1</number>
+   </property>
+   <widget class="QMenu" name="menuArquivo">
+    <property name="title">
+     <string>Arquivo</string>
+    </property>
+    <widget class="QMenu" name="menuCriar_Dataset">
+     <property name="title">
+      <string>Criar Dataset</string>
+     </property>
+     <addaction name="actionCriar_Classe"/>
+     <addaction name="actionDividir_Imagem"/>
+    </widget>
+    <addaction name="actionAbrir_Dataset"/>
+    <addaction name="menuCriar_Dataset"/>
+    <addaction name="separator"/>
+    <addaction name="actionSair"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAtalhos"/>
+    <addaction name="actionSobre"/>
+   </widget>
+   <widget class="QMenu" name="menuFerramentas">
+    <property name="title">
+     <string>Ferramentas</string>
+    </property>
+    <widget class="QMenu" name="menuProje_o">
+     <property name="title">
+      <string>Projeção</string>
+     </property>
+     <addaction name="actionPCA"/>
+     <addaction name="actionTSNE"/>
+     <addaction name="actionSAMMON"/>
+     <addaction name="actionMDS"/>
+    </widget>
+    <widget class="QMenu" name="menuPr_Processamento">
+     <property name="title">
+      <string>Pré Processamento Manual</string>
+     </property>
+     <widget class="QMenu" name="menuFiltros">
+      <property name="title">
+       <string>Filtros</string>
+      </property>
+      <addaction name="actionEqualizacao"/>
+      <addaction name="actionMediana"/>
+      <addaction name="actionBinarizacao"/>
+      <addaction name="actionInversao"/>
+      <addaction name="actionOperadores"/>
+     </widget>
+     <addaction name="actionRecorteLivre"/>
+     <addaction name="separator"/>
+     <addaction name="menuFiltros"/>
+    </widget>
+    <addaction name="menuPr_Processamento"/>
+    <addaction name="actionPre_Processamento_Automatico"/>
+    <addaction name="separator"/>
+    <addaction name="actionDeteccao_de_Caracteristicas"/>
+    <addaction name="menuProje_o"/>
+   </widget>
+   <widget class="QMenu" name="menuPrefer_ncias">
+    <property name="title">
+     <string>Preferências</string>
+    </property>
+    <addaction name="actionNormalizar_Valores"/>
+   </widget>
+   <widget class="QMenu" name="menuExibir">
+    <property name="title">
+     <string>Exibir</string>
+    </property>
+    <addaction name="actionImagens"/>
+   </widget>
+   <addaction name="menuArquivo"/>
+   <addaction name="menuExibir"/>
+   <addaction name="menuFerramentas"/>
+   <addaction name="menuPrefer_ncias"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QDockWidget" name="dockWidget_6">
+   <property name="minimumSize">
+    <size>
+     <width>500</width>
+     <height>243</height>
+    </size>
+   </property>
+   <property name="windowTitle">
+    <string>Caracteristicas</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>4</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_6"/>
+  </widget>
+  <widget class="QDockWidget" name="dockWidget_7">
+   <property name="minimumSize">
+    <size>
+     <width>500</width>
+     <height>111</height>
+    </size>
+   </property>
+   <property name="windowTitle">
+    <string>Individuos</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_7">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QTableWidget" name="tableWidget">
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAsNeeded</enum>
+       </property>
+       <property name="horizontalScrollBarPolicy">
+        <enum>Qt::ScrollBarAsNeeded</enum>
+       </property>
+       <column>
+        <property name="text">
+         <string>Nome</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Cor Classe</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Classe</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Área</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Perimetro</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Média</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Mediana</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Angulo</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Centroide X</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Centroide Y</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Centro de massa Y</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Centro de massa X</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Roi Largura</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Roi Altura</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Máximo</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Mínimo</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Mode</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>X</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Y</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Width</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Height</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Maior</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Menor</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Circularidade</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Feret</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Densidade integrada</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Inclinação</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>%Area</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>RawIntDen</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>FeretX</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>FeretY</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>FeretAngle</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>MinFeret</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Proporção da Tela</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Round</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Solidez</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>MaxThr</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>MinThr</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockWidget_8">
+   <property name="minimumSize">
+    <size>
+     <width>500</width>
+     <height>243</height>
+    </size>
+   </property>
+   <property name="toolTipDuration">
+    <number>1</number>
+   </property>
+   <property name="windowTitle">
+    <string>Projeção</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>4</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_8"/>
+  </widget>
+  <action name="actionAbrir_Dataset">
+   <property name="text">
+    <string>Abrir Dataset</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::WindowShortcut</enum>
+   </property>
+  </action>
+  <action name="actionSair">
+   <property name="text">
+    <string>Sair</string>
+   </property>
+  </action>
+  <action name="actionAtalhos">
+   <property name="text">
+    <string>Atalhos</string>
+   </property>
+  </action>
+  <action name="actionSobre">
+   <property name="text">
+    <string>Sobre</string>
+   </property>
+  </action>
+  <action name="actionDeteccao_de_Caracteristicas">
+   <property name="text">
+    <string>Análise Morfológica</string>
+   </property>
+   <property name="toolTip">
+    <string>Análise Morfológica</string>
+   </property>
+  </action>
+  <action name="actionPCA">
+   <property name="text">
+    <string>PCA</string>
+   </property>
+  </action>
+  <action name="actionTSNE">
+   <property name="text">
+    <string>TSNE</string>
+   </property>
+  </action>
+  <action name="actionSAMMON">
+   <property name="text">
+    <string>SAMMON</string>
+   </property>
+  </action>
+  <action name="actionMDS">
+   <property name="text">
+    <string>MDS</string>
+   </property>
+  </action>
+  <action name="actionNormalizar_Valores">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Normalizar Valores</string>
+   </property>
+  </action>
+  <action name="actionRecorteLivre">
+   <property name="text">
+    <string>Recortar Região de Interesse</string>
+   </property>
+  </action>
+  <action name="actionDividir_Imagem">
+   <property name="text">
+    <string>Dividir Imagem</string>
+   </property>
+  </action>
+  <action name="actionEqualizacao">
+   <property name="text">
+    <string>Equalização</string>
+   </property>
+  </action>
+  <action name="actionMediana">
+   <property name="text">
+    <string>Mediana</string>
+   </property>
+  </action>
+  <action name="actionBinarizacao">
+   <property name="text">
+    <string>Binarização</string>
+   </property>
+  </action>
+  <action name="actionInversao">
+   <property name="text">
+    <string>Inversão</string>
+   </property>
+  </action>
+  <action name="actionCriar_Classe">
+   <property name="text">
+    <string>Criar Classe</string>
+   </property>
+  </action>
+  <action name="actionOperadores">
+   <property name="text">
+    <string>Operadores</string>
+   </property>
+  </action>
+  <action name="actionteste">
+   <property name="text">
+    <string>teste</string>
+   </property>
+  </action>
+  <action name="actionPre_Processamento_Automatico">
+   <property name="text">
+    <string>Pré Processamento Automático</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Etapas de pré processamento automatico: 1° equalização - 2° mediana - 3° binarização - 4° operadores morfológicos. Certifique-se que suas imagens estajem apenas com a região de interesse.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </action>
+  <action name="actionImagens">
+   <property name="text">
+    <string>Imagens</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
